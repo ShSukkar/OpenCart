@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "./Home.css";
 import { Card, Button } from "react-bootstrap";
 import * as productCards from "../../data.js";
+import { Link } from "react-router-dom";
 
 // holder.js/100px180
 
@@ -10,9 +11,11 @@ export default class Home extends Component {
         let allProductCards = productCards.map((prod, key) => {
             return (
                 <Card className="col-md-3" style={{ width: '18rem', borderRadius: "20px" }}>
-                    <Card.Img variant="top" src={`imgs/${prod.img}`} style={{ borderRadius: "20px", width: "90%", alignSelf: "center" }} />
+                    <Link to="/product">
+                        <Card.Img variant="top" src={`imgs/${prod.img}`} style={{ borderRadius: "20px", width: "90%", alignSelf: "center" }} />
+                    </Link>
                     <Card.Body>
-                        <Card.Title style={{ fontWeight: "lighter" }}>{prod.desc}</Card.Title>
+                        <Card.Title style={{ fontWeight: "lighter" }}>{prod.title}</Card.Title>
                         <Card.Text style={{ color: "darkorange", fontWeight: "bold" }}>
                             {prod.price} JD
                         </Card.Text>
