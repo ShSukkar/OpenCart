@@ -2,6 +2,7 @@
     max-height: 100px;
 }
 
-/* .table td, .table th {
+.Cart .table td, .Cart .table th {
     vertical-align: middle;
-} */
+    font-weight: bold;
+}

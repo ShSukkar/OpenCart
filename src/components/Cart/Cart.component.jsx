@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Cart.css";
+import { Button } from "react-bootstrap";
 
 class Cart extends Component {
     constructor(props) {
@@ -39,16 +40,16 @@ class Cart extends Component {
         let tableRows = cartContent.map(prod => {
             return (
                 <tr>
-                    <td style={{ verticalAlign: "middle" }}><img className="tbl-img" src={prod.img} alt="prod-img" /></td>
-                    <td style={{ fontWeight: "bold", verticalAlign: "middle" }}>{prod.title}</td>
-                    <td style={{ color: "darkorange", fontWeight: "bold", verticalAlign: "middle" }}>{prod.price}</td>
-                    <td style={{ verticalAlign: "middle" }}><i className="fa fa-trash" onClick={() => this.deleteFromCart(prod.id)} style={{ color: "darkgrey", border: "1px darkgrey solid", borderRadius: "2px", cursor: "pointer" }}></i></td>
+                    <td><img className="tbl-img" src={prod.img} alt="prod-img" /></td>
+                    <td>{prod.title}</td>
+                    <td style={{ color: "darkorange" }}>{prod.price}</td>
+                    <td><i className="fa fa-trash" onClick={() => this.deleteFromCart(prod.id)} style={{ color: "darkgrey", border: "1px darkgrey solid", borderRadius: "2px", cursor: "pointer" }}></i></td>
                 </tr>
             );
         })
 
         return (
-            <div>
+            <div className="Cart">
                 <table class="table table-hover">
                     <thead>
                         <tr>
