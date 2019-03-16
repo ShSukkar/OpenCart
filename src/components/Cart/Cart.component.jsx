@@ -23,6 +23,16 @@ class Cart extends Component {
         this.setState({ cartContent });
     }
 
+    deleteFromCart = (prodId) => {
+        let { cartContent } = this.state;
+
+        cartContent.forEach((prod, i) => {
+            if (cartContent[i].id === prodId) {
+                cartContent.splice(i, 1);
+                this.setState({ cartContent })
+            }
+        });
+    }
 
     render() {
         let { cartContent } = this.state;
