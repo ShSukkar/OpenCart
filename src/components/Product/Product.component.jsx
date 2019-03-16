@@ -11,15 +11,23 @@ class Product extends Component {
         super(props);
 
         this.state = {
-            productId: this.props.match.params.id
+            productId: this.props.match.params.id,
+            productDetails: products[this.props.match.params.id - 1]
         }
     }
 
     componentDidMount() {
+        // this.setState({ productDetails: products[this.state.productId - 1] });
+    }
+
+    onChange(selectedItemId) {
+        console.log(selectedItemId);
+        this.setState({ productId: selectedItemId, productDetails: products[selectedItemId] });
+
     }
 
     render() {
-        let { productId } = this.state;
+        let { productDetails } = this.state;
 
         let featuredProductsImgs = products.map((prod, key) => {
             return (
@@ -33,17 +41,19 @@ class Product extends Component {
             <div className="Product">
                 <div className="row" style={{ width: '100%', borderRadius: "20px", border: "1px lightgrey solid", boxShadow: ".5px .5px 1px 1px #aaaaaa" }}>
                     <div className="col-md-6 carousel-div">
-                        <Carousel className="carousel">
+                        <Carousel className="carousel" onChange={(selectedItem) => {
+                            this.onChange(selectedItem);
+                        }}>
                             {featuredProductsImgs}
                         </Carousel>
                     </div>
                     <div className="col-md-6 body-div">
-                        <h2>{products[productId - 1].title}</h2>
+                        <h2>{productDetails.title}</h2>
                         <h3 style={{ color: "darkorange", fontWeight: "bold" }}>
-                            {products[productId - 1].price} JD
+                            {productDetails.price} JD
                         </h3>
                         <p>
-                            {products[productId - 1].desc}
+                            {productDetails.desc}
                         </p>
                         <Button style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "100%", height: "50px", letterSpacing: "2px", borderRadius: "20px", fontWeight: "bold" }}>ADD TO CART</Button>
                     </div>
