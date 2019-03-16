@@ -4,7 +4,7 @@ import "./Checkout.css";
 class Checkout extends Component {
     render() {
         return (
-            <div>
+            <div className="Checkout">
                 Checkout
             </div>
         );
