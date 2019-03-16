@@ -26,8 +26,12 @@ class Product extends Component {
 
     }
 
+    addToCart = () => {
+
+    }
+
     render() {
-        let { productDetails } = this.state;
+        let { productId, productDetails } = this.state;
 
         let featuredProductsImgs = products.map((prod, key) => {
             return (
@@ -55,7 +59,7 @@ class Product extends Component {
                         <p>
                             {productDetails.desc}
                         </p>
-                        <Button style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "100%", height: "50px", letterSpacing: "2px", borderRadius: "20px", fontWeight: "bold" }}>ADD TO CART</Button>
+                        <Button onClick={this.addToCart} style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "100%", height: "50px", letterSpacing: "2px", borderRadius: "20px", fontWeight: "bold" }}>ADD TO CART</Button>
                     </div>
                 </div>
             </div>
