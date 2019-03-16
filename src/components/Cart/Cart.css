@@ -1,0 +1,8 @@
+.tbl-img {
+    max-height: 100px;
+}
+
+.Cart .table td, .Cart .table th {
+    vertical-align: middle;
+    font-weight: bold;
+}

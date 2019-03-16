@@ -5,25 +5,44 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import * as products from "../../data.js";
 
-
 class Product extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             productId: this.props.match.params.id,
-            productDetails: products[this.props.match.params.id - 1]
+            productDetails: {}
         }
     }
 
     componentDidMount() {
-        // this.setState({ productDetails: products[this.state.productId - 1] });
+        this.fetchProductById(this.state.productId);
     }
 
-    onChange(selectedItemId) {
-        console.log(selectedItemId);
-        this.setState({ productId: selectedItemId, productDetails: products[selectedItemId] });
+    fetchProductById = (id) => {
+        let found = false;
+        let i = 0;
 
+        while (!found && i < products.length) {
+            if (products[i].id == id) {
+                found = true;
+
+                this.setState({ productDetails: products[i] });
+            }
+            else {
+                i++;
+            }
+        }
+    }
+
+    //Update the displayed info, ti display the details of new selected product from the slider
+    onChange(selectedItemIndex) {
+        this.setState({ productDetails: products[selectedItemIndex] });
+    }
+
+    addToCart = () => {
+        let { productDetails } = this.state;
+        window.localStorage.setItem("id" + productDetails.id, JSON.stringify(productDetails));
     }
 
     render() {
@@ -31,9 +50,7 @@ class Product extends Component {
 
         let featuredProductsImgs = products.map((prod, key) => {
             return (
-                <div key={key}>
-                    <img src={`${prod.img}`} alt="prod-img" />
-                </div>
+                <img src={`${prod.img}`} alt="prod-img" />
             );
         });
 
@@ -55,7 +72,7 @@ class Product extends Component {
                         <p>
                             {productDetails.desc}
                         </p>
-                        <Button style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "100%", height: "50px", letterSpacing: "2px", borderRadius: "20px", fontWeight: "bold" }}>ADD TO CART</Button>
+                        <Button onClick={this.addToCart} style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "100%", height: "50px", letterSpacing: "2px", borderRadius: "20px", fontWeight: "bold" }}>ADD TO CART</Button>
                     </div>
                 </div>
             </div>
