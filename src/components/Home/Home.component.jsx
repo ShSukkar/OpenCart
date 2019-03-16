@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import "./Home.css";
 import { Card, Button } from "react-bootstrap";
 import * as productCards from "../../data.js";
-
-// holder.js/100px180
+import { Link } from "react-router-dom";
 
 export default class Home extends Component {
     render() {
         let allProductCards = productCards.map((prod, key) => {
             return (
                 <Card className="col-md-3" style={{ width: '18rem', borderRadius: "20px" }}>
-                    <Card.Img variant="top" src={`imgs/${prod.img}`} style={{ borderRadius: "20px", width: "90%", alignSelf: "center" }} />
+                    <Link to={`/products/${prod.id}`}>
+                        <Card.Img variant="top" src={`${prod.img}`} style={{ borderRadius: "20px", width: "90%", alignSelf: "center" }} />
+                    </Link>
                     <Card.Body>
-                        <Card.Title style={{ fontWeight: "lighter" }}>{prod.desc}</Card.Title>
+                        <Card.Title style={{ fontWeight: "lighter" }}>{prod.title}</Card.Title>
                         <Card.Text style={{ color: "darkorange", fontWeight: "bold" }}>
                             {prod.price} JD
                         </Card.Text>
