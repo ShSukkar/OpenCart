@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import * as products from "../../data.js";
+import ls from 'local-storage';
 
 
 class Product extends Component {
@@ -12,32 +13,47 @@ class Product extends Component {
 
         this.state = {
             productId: this.props.match.params.id,
-            productDetails: products[this.props.match.params.id - 1]
+            productDetails: {}
         }
     }
 
     componentDidMount() {
-        // this.setState({ productDetails: products[this.state.productId - 1] });
+        this.fetchProductById(this.state.productId);
     }
 
-    onChange(selectedItemId) {
-        console.log(selectedItemId);
-        this.setState({ productId: selectedItemId, productDetails: products[selectedItemId] });
+    fetchProductById = (id) => {
+        let found = false;
+        let i = 0;
 
+        while (!found && i < products.length) {
+            if (products[i].id == id) {
+                found = true;
+
+                this.setState({ productDetails: products[i] });
+            }
+            else {
+                i++;
+            }
+        }
+    }
+
+    //Update the displayed info, ti display the details of new selected product from the slider
+    onChange(selectedItemIndex) {
+        this.setState({ productDetails: products[selectedItemIndex] });
     }
 
     addToCart = () => {
-
+        let { productDetails } = this.state;
+        window.localStorage.setItem("id" + productDetails.id, JSON.stringify(productDetails));
+        // console.log(window.localStorage);
     }
 
     render() {
-        let { productId, productDetails } = this.state;
+        let { productDetails } = this.state;
 
         let featuredProductsImgs = products.map((prod, key) => {
             return (
-                <div key={key}>
-                    <img src={`${prod.img}`} alt="prod-img" />
-                </div>
+                <img src={`${prod.img}`} alt="prod-img" />
             );
         });
 
