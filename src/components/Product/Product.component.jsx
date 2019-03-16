@@ -4,8 +4,6 @@ import { Button } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import * as products from "../../data.js";
-import ls from 'local-storage';
-
 
 class Product extends Component {
     constructor(props) {
@@ -45,7 +43,6 @@ class Product extends Component {
     addToCart = () => {
         let { productDetails } = this.state;
         window.localStorage.setItem("id" + productDetails.id, JSON.stringify(productDetails));
-        // console.log(window.localStorage);
     }
 
     render() {
