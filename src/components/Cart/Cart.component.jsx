@@ -63,6 +63,7 @@ class Cart extends Component {
                         {tableRows}
                     </tbody>
                 </table>
+                <Button style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "30%", height: "50px", letterSpacing: "1px", borderRadius: "20px", display: "block", margin: "auto" }}>PROCEED TO CHECKOUT</Button>
             </div>
         );
     }
