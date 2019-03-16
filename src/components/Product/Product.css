@@ -1,0 +1,16 @@
+.carousel .slide img{
+    border-radius: 20px
+}
+
+/* .carousel .slider .thumb{
+    border: none;
+} */
+
+/* .carousel .thumb img {
+  
+} */
+
+.body-div {
+    position: relative;
+    top: 15vh;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
+
 
 import Header from "../Header/Header.component";
 import Home from "../Home/Home.component";
@@ -9,16 +10,16 @@ import Product from "../Product/Product.component";
 class MyRouter extends Component {
     render() {
         return (
-            <Router>
+            <HashRouter>
                 <div className="App">
                     <Header />
                     <Switch>
-                        <Route path="/product" component={Product} />
+                        <Route path="/products/:id" component={Product} />
                         <Route exact path="/" component={Home} />
                     </Switch>
                     <Footer />
                 </div>
-            </Router>
+            </HashRouter>
         );
     }
 }

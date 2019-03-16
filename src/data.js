@@ -1,42 +1,50 @@
 module.exports = [
     {
-        img: "prod1.png",
+        id: 1,
+        img: "imgs/prod1.png",
         title: "Pink Dress",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
         price: "25.00"
     },
     {
-        img: "prod1.png",
+        id: 2,
+        img: "imgs/prod1.png",
+        title: "Pink Dress2",
+        desc: "ALorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
+        price: "25.00"
+    }, {
+        id: 3,
+        img: "imgs/prod1.png",
+        title: "Pink Dress3",
+        desc: "BLorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
+        price: "25.00"
+    }, {
+        id: 4,
+        img: "imgs/prod1.png",
+        title: "Pink Dress4",
+        desc: "CLorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
+        price: "25.00"
+    }, {
+        id: 5,
+        img: "imgs/prod1.png",
         title: "Pink Dress",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
         price: "25.00"
     }, {
-        img: "prod1.png",
+        id: 6,
+        img: "imgs/prod1.png",
         title: "Pink Dress",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
         price: "25.00"
     }, {
-        img: "prod1.png",
+        id: 7,
+        img: "imgs/prod1.png",
         title: "Pink Dress",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
         price: "25.00"
     }, {
-        img: "prod1.png",
-        title: "Pink Dress",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
-        price: "25.00"
-    }, {
-        img: "prod1.png",
-        title: "Pink Dress",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
-        price: "25.00"
-    }, {
-        img: "prod1.png",
-        title: "Pink Dress",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
-        price: "25.00"
-    }, {
-        img: "prod1.png",
+        id: 8,
+        img: "imgs/prod1.png",
         title: "Pink Dress",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione corporis voluptatibus, sequi culpa veritatis cum quos quibusdam, facilis, consectetur quam fuga omnis itaque dolor? Officia magni fugiat consectetur ut expedita!",
         price: "25.00"
