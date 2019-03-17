@@ -43,6 +43,7 @@ class Product extends Component {
     addToCart = () => {
         let { productDetails } = this.state;
         window.localStorage.setItem("id" + productDetails.id, JSON.stringify(productDetails));
+        alert(`${productDetails.title} has been added to your cart successfully!`)
     }
 
     render() {
