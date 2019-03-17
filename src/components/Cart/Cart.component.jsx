@@ -33,6 +33,7 @@ class Cart extends Component {
             if (cartContent[i].id === prodId) {
                 cartContent.splice(i, 1);
                 this.setState({ cartContent })
+                delete localStorage[`id${prod.id}`];
             }
         });
     }
