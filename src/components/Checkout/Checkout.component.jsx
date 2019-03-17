@@ -10,7 +10,7 @@ class Checkout extends Component {
         super(props);
 
         this.state = {
-
+            orderDetails: this.props.location.state['cartContent']
         }
     }
 
@@ -58,7 +58,7 @@ class Checkout extends Component {
                     </div>
                     <div className="col-md-4">
                         <Typography variant="h5">YOUR ORDER</Typography>
-                        <Order />
+                        <Order orderInfo={this.state.orderDetails} />
                     </div>
                 </div>
             </div>
