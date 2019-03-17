@@ -5,6 +5,18 @@ import * as productCards from "../../data.js";
 import { Link } from "react-router-dom";
 
 export default class Home extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {}
+    }
+
+    addToCart = (key) => {
+        let productDetails = productCards[key];
+        window.localStorage.setItem("id" + productDetails.id, JSON.stringify(productDetails));
+        alert(`${productDetails.title} has been added to your cart successfully!`)
+    }
+
     render() {
         let allProductCards = productCards.map((prod, key) => {
             return (
@@ -17,7 +29,7 @@ export default class Home extends Component {
                         <Card.Text style={{ color: "darkorange", fontWeight: "bold" }}>
                             {prod.price} JD
                         </Card.Text>
-                        <Button style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "100%", borderRadius: "20px", fontWeight: "bold" }}>ADD TO CART</Button>
+                        <Button onClick={() => this.addToCart(key)} style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "100%", borderRadius: "20px", fontWeight: "bold" }}>ADD TO CART</Button>
                     </Card.Body>
                 </Card>
             )
