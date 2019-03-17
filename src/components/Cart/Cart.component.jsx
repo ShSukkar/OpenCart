@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./Cart.css";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 
 class Cart extends Component {
     constructor(props) {
@@ -63,8 +65,15 @@ class Cart extends Component {
                         {tableRows}
                     </tbody>
                 </table>
-                <Button style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "30%", height: "50px", letterSpacing: "1px", borderRadius: "20px", display: "block", margin: "auto" }}>PROCEED TO CHECKOUT</Button>
-            </div>
+                <Link to={{
+                    pathname: '/checkout',
+                    state: {
+                        cartContent: cartContent
+                    }
+                }}>
+                    < Button style={{ color: "white", backgroundColor: "darkorange", border: "none", width: "30%", height: "50px", letterSpacing: "1px", borderRadius: "20px", display: "block", margin: "auto" }}>PROCEED TO CHECKOUT</Button>
+                </Link>
+            </div >
         );
     }
 }
