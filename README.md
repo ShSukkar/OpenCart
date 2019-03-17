@@ -5,8 +5,11 @@ It's an online market shopping.
 ## Getting Started
 
 `git clone https://github.com/ShSukkar/OpenCart.git`
+
 `cd OpenCart`
+
 `npm install`
+
 `npm start`
 
 ### Prerequisites
